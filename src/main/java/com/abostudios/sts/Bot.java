@@ -1,11 +1,11 @@
 package com.abostudios.sts;
 
-import com.abostudios.api.Exchange;
+import com.abostudios.api.exchanges.ExchangeApiClientFactory;
 import com.abostudios.sts.strategies.Strategy;
 
 public class Bot {
     private Strategy strategy;
-    private Exchange exchange;
+    private ExchangeApiClientFactory exchangeApiClientFactory;
 
     /**
      * Ticks through different algo states during the trading lifecycle
@@ -24,9 +24,9 @@ public class Bot {
 
     private State state;
 
-    public Bot(Strategy strategy, Exchange exchange) {
+    public Bot(Strategy strategy, ExchangeApiClientFactory exchangeApiClientFactory) {
         this.strategy = strategy;
-        this.exchange = exchange;
+        this.exchangeApiClientFactory = exchangeApiClientFactory;
         this.state = State.ENTRY;
     }
 
@@ -40,15 +40,15 @@ public class Bot {
     private State update() {
         switch(state) {
             case ENTRY: {
-                return strategy.entry(exchange);
+                return strategy.entry(exchangeApiClientFactory);
             }
 
             case ACTIVE_ORDER: {
-                return strategy.activeOrder(exchange);
+                return strategy.activeOrder(exchangeApiClientFactory);
             }
 
             case EXIT: {
-                return strategy.exit(exchange);
+                return strategy.exit(exchangeApiClientFactory);
             }
 
             //Something went wrong?, destroy the bot
