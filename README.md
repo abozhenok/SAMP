@@ -7,7 +7,7 @@ The software allows you to create, monitor, manage and test the performance of q
 * 1 Framework-Many Solutions. Decide between an Algorithmic Bot or a SMM (Systematic Market Maker).
 * 1 Integrated Exchange API, our model is a 1-to-many relationship. See below for current list of supported exchanges.
 * EINSTEIN integration feature (machine learning suite).
-* Integrated Support for 130+ technical indicators. [See]https://github.com/ta4j/ta4j for documentation.
+* Integrated Support for 130+ technical indicators. [See](https://github.com/ta4j/ta4j) for documentation.
 * Option for a Proprietary Platform. Allows users to make there own changes locally.
 * Dedicated algo testing features. For example, Monte Carlo Simulation.
 * Algo Management Application. Allows you to monitor and manage your algorithms anywhere.
